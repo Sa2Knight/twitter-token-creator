@@ -9,8 +9,11 @@ CUI上でTwitter用のOAuthアクセスキーの生成を行う簡易ツール�
 |gem|2.4.5|
 |bundle|1.13.4|
 # インストール手順
-Githubよりclone
+1. Githubよりclone
 > $ git clone git@github.com:Sa2Knight/twitter-token-creator.git
+2. ライブラリのインストール
+> $ sudo bundle install --path vendor/bundle
+
 # 使い方
 1. Twitter Developersにアプリを登録して、カスタマーキーを取得する
 2. 本ツールを以下のコマンドで実行
