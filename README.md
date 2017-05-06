@@ -1,13 +1,16 @@
 # Twitter token creator
 CUI上でTwitter用のOAuthアクセスキーの生成を行う簡易ツールです
 # システム要件
+
 以下の環境で動作を確認
+
 |要素|バージョン|
-|---|----|
+|------|------|
 |debian|8.6|
 |ruby|2.2.2|
 |gem|2.4.5|
 |bundle|1.13.4|
+
 # インストール手順
 1. Githubよりclone
 > $ git clone git@github.com:Sa2Knight/twitter-token-creator.git
