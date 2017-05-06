@@ -22,10 +22,20 @@ class Twitter
     end
   end
 
-  # set_access_token - Twitter連携用のアクセストークンを保存
+  # get_access_token - Twitter連携用のアクセストークンを取得
   #--------------------------------------------------------------------
-  def set_access_token(req_token , req_secret , verifier)
-    @token = @twitter.authorize(req_token , req_secret , :oauth_verifier => verifier)
+  def get_access_token(req_token , req_secret , verifier)
+    begin
+      @token = @twitter.authorize(req_token , req_secret , :oauth_verifier => verifier)
+    rescue OAuth::Unauthorized => err
+      nil
+    end
+  end
+
+  # user_info - ユーザ情報を取得
+  #---------------------------------------------------------------------
+  def user_info
+    @twitter.info
   end
 
 end

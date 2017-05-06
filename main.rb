@@ -23,3 +23,13 @@ unless matched = redirect_url.match(/oauth_verifier=(.+)$/)
   exit
 end
 verifier = matched[1]
+
+# アクセストークンを生成する
+unless access_token = twitter.get_access_token(request_token.token, request_token.secret, verifier)
+  puts "アクセストークンの取得に失敗しました"
+  exit
+end
+
+puts "#{twitter.user_info['screen_name']}の認証に成功しました"
+puts "access token: #{access_token.token}"
+puts "access secret: #{access_token.secret}"
